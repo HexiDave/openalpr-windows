@@ -59,7 +59,7 @@ $CmakeGenerator = $null
 # Dependencies version numbering
 $TesseractVersion = "303"
 $LeptonicaVersion = "170"
-$OpenCVVersion = "248"
+$OpenCVVersion = "300"
 $OpenALPRVersionMajorMinorPatch = $OpenALPRVersion -replace '.', ''
 
 # Metrics
@@ -210,7 +210,7 @@ function Set-PlatformToolset
             $script:ToolsVersion = "12.0"
             $script:VisualStudioVersion = "12.0"
             $script:VXXCommonTools = $env:VS120COMNTOOLS
-            $script:CmakeGenerator = "Visual Studio 12 2013"
+            $script:CmakeGenerator = "Visual Studio 12"
         }
         "v140" {
             $script:ToolsVersion = "14.0"
@@ -504,6 +504,7 @@ function Build-OpenCV
         "-DBUILD_EXAMPLES=OFF",
 		"-DWITH_OPENCL=OFF",
         "-DCMAKE_BUILD_TYPE=$Configuration",
+		"-DBUILD_opencv_world=ON",
         "-Wno-dev",
         "-G`"$CmakeGenerator`"",
         "-H`"$OpenCVDir`"",

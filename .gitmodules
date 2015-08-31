@@ -1,6 +1,6 @@
 [submodule "opencv"]
 	path = opencv
-	url = https://github.com/Itseez/opencv.git
+	url = https://github.com/HexiDave/opencv.git
 	ignore = dirty
 [submodule "tesseract-ocr/src"]
 	path = tesseract-ocr/src
